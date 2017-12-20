@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="14.0427mm" height="13.3174mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1404 1332"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:gray;stroke-width:35.2697}
+    .str1 {stroke:#FEFEFE;stroke-width:52.9096;stroke-linecap:round;stroke-linejoin:round}
+    .fil1 {fill:none;fill-rule:nonzero}
+    .fil0 {fill:black}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0 str0" d="M250 18l904 0c128,0 233,105 233,232l0 831c0,128 -105,233 -233,233l-904 0c-127,0 -232,-105 -232,-233l0 -831c0,-128 104,-232 232,-232z"/>
+  <polyline class="fil1 str1" points="400,364 702,666 400,968 "/>
+  <polyline class="fil1 str1" points="1004,364 702,666 1004,968 "/>
+ </g>
+</svg>
