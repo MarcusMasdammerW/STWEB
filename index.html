@@ -155,6 +155,7 @@
                     <input type="number" id="starHeightVal" value ="0.3" onblur="emitInt('starHeightVal')"/></td></div>
                   <td><img class="posIncre" onclick="posIncre('starHeightVal',1)"/></td></tr>
                   <tr><td>
+                    
                     <label class="container">Celing
                       <input type="radio" checked="checked" name="starPosition" value="celing">
                       <span class="checkmark"></span>
@@ -258,11 +259,20 @@
 
           <!-- Wizzard 5 ---------------------------------------------- -->
           <!-- ** make class for wizIncerCon and wizDropCon so as to position them on the screen -->
+          <!-- ** make class for drop buttons -->
           <div id="wz5" class="mapsContents">
             <div class="wizCon">
               <h2>Map Scaling</h2>
               <div class="wizDropCon">
-
+                <table class="wizDropTbl">
+                  <tbody>
+                    <tr>
+                      <td><img class="dropO" onclick="drop(0)"></td>
+                      <td><img class="dropX" onclick="drop(1)"></td>
+                      <td><img class="dropY" onclick="drop(2)"></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <div class="wizIncreCon">
                 <table class="">
@@ -307,34 +317,14 @@
               </table>
             </div>
           </div>
-                  <div id = "wz5" class="mapsContents">
-                    <center><h1>Map Scaling</h1></center>
-                    <p> </p>
-                    <center><div class="btn-group" style="width:100%; height:10%; left:0.1%;">
-                      <button onclick="drop(1)" style="width:33.3%">Drop O</button>
-                      <button onclick="drop(2)" style="width:33.3%">Drop X</button>
-                      <button onclick="drop(3)" style="width:33.3%">Drop Y</button>
-                    </div></center>
-                    <p> </p>
-                    <p> </p>
-                    <label for="O_Xinput"> Origin to X distance(mm):</label>
-                    <center><button class ="increbutton" onclick = "OX(1)"> &#8672 </button>
-                      <input type = "number" id = "O_Xinput" value="0">
-                      <button class ="increbutton" onclick = "OX(2)">&#8674</button></center>
-                      <p> </p>
-                      <p> </p>
-                      <label for="O_Xinput"> Star-tracker height:(mm):</label>
-                      <center><button class ="increbutton" onclick = "STHeight(1)">&#8672</button>
-                        <input type = "number" id = "stHeight" value="0">
-                        <button class ="increbutton" onclick = "STHeight(2)">&#8674</button></center>
-                        <center><div class="btn-group" style="width:100%; bottom:0%; position:absolute; height:10%; left:0.1%;">
-                          <button onclick="wizzard(4)" style="width:33.3%">Back</button>
-                          <button onclick="wizzard(0)" style="width:33.3%">Quit</button>
-                          <button onclick="wizzard(6)" style="width:33.3%">Next</button>
-                        </div></center>
-                      </div>
-                      <!-- Wizzard End ------------------------------------------------  -->
-                      <!-- Map Load Tab ---------------------------------------------- -->
+
+          <!-- Wizzard End ------------------------------------------------  -->
+          <!-- Map Load Tab ---------------------------------------------- -->
+          <div class="mapsContents" id="mapSelection">
+            <div class="mapLstCont">
+              <select class="lstSelector" id="mapLst"/>
+            </div>
+          </div>
                       <div id = "mapSelection" class="mapsContents">
                         <p> </p>
                         <p> </p>

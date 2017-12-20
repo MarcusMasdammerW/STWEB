@@ -202,6 +202,16 @@ div.mapsMenus {
 .wizCon{
   //ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
 }
+/* Wizard Output text */
+.wizOutputText{
+  max-width: none;
+  min-width: none;
+  max-height: none;
+  min-height: none;
+  font-family: txtRegular;
+  font-size: none;
+  color: white;
+}
 
 /*  Wizard 1 Layout */
 table.w1Layout {
@@ -314,12 +324,6 @@ table.w2Layout tr:nth-child(2) {
     background-image:url("../StarTracker_GUI_Images/pbActive.svg");
 }
 /* Wizard 3 */
-.wizOutputText{
-  max-width: none;
-  min-width: none;
-  max-height: none;
-  min-height: none;
-}
 .wizOutputText p{
   font-family: txtLight;
   font-size: none;
