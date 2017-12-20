@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
+  <title>Star Tracker</title>
+  <meta name="description" content="Star Tracker Status">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <div class = "main-container"> <!-- will be screen size -->
+
+    <div class = "topFlex"> <!-- The window for stars -->
+
+    </div>
+
+    <div class = "bottomFlex"> <!-- Information box -->
+
+      <div class = "tabFlex"> <!-- Navigation Tab -->
+        <img id="naviBar" class = "naviBar" src="../StarTracker_GUI_Images/statusTab.svg" usemap="#naviBar">
+        <a onclick="openTab(event, 'status')" style="top: 0%; left: 0%; width: 21.5%; height: 100%;">
+          <h1 id="statusBtn">Status</h1>
+        </a>
+        <a onclick="openTab(event, 'maps'); mapsTab('Maps');" style="top: 0%; left: 21.5%; width: 19%; height: 100%;">
+          <h1 id="mapsBtn">Maps</h1>
+        </a>
+        <a onclick="openTab(event, 'ccdoff')" style="top: 0%; left: 40.5%; width: 19%; height: 100%;">
+          <h1 id="ccdoffsetBtn">CCD Offsets</h1>
+        </a>
+        <a onclick="openTab(event, 'trackingOutput')" style="top: 0%; left: 59.5%; width: 19%; height: 100%;">
+          <h1 id="trackingOutputBtn">Tracking Output</h1>
+        </a>
+        <a onclick="openTab(event, 'advanced')" style="top: 0%; left: 78.5%; width: 21.5%; height: 100%;">
+          <h1 id="advancedBtn">Advanced</h1>
+        </a>
+      </div>
+      <!-- Main Information Output -->
+      <div class = "infoBar">
+        <!-- Status Page -->
+        <div id="status" class="tabcontent">
+          <div class="mapNameContainer"><p class="mapName">Map:<p class="mapName" id="mapName">No Map Loaded</p></p></div>
+          <div class="statusValsContainer">
+            <table class="statusVals">
+              <tbody>
+                <tr>
+                  <td>X:</td><td>P:</td><td></td></tr>
+                <tr>
+                  <td id="valX">000</td><td id="valP">000</td><td></td></tr>
+                <tr>
+                  <td>Y:</td><td>T:</td><td>Zoom:</td></tr>
+                <tr>
+                  <td id="valY">000</td><td id="valT">000</td><td id="valZoom">000</td></tr>
+                <tr>
+                  <td>Z:</td><td>R:</td><td>Focus:</td></tr>
+                <tr>
+                  <td id="valZ">000</td><td id="valR">000</td><td id="valFocus">000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Maps Tab -->
+        <div id="Maps" class="tabcontent">
+        <!-- Main Menu for maps ---------------------------------------- -->
+          <div id="mapsMainMenu" class="mapsContent">
+            <div class="divTable mapsMenus">
+              <div class="divTableBody">
+                <div class="divTableRow">
+                  <div class="divTableCell imgBtn" onclick="mapsTab('buildNewMap')">Build New Map</div>
+                  <div class="divTableCell imgBtn" onclick="mapsTab('mapSelection')">Map Selection</div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell imgBtn" onclick="mapsTab('rereferencingMap')">Rereferencing Current Map</div>
+                  <div class="divTableCell imgBtn" onclick="mapsTab('rollback')">Rollback Current Map</div>
+                </div>
+                <div class="divTableRow">
+                  <div class="divTableCell imgBtn" onclick="mapsTab('addStars')">Add Stars</div>
+                  <div class="divTableCell imgBtn" onclick="mapsTab('mapTweaking')">Tweaking</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Build new Map Wizard -------------------------------------- -->
+          <div id="buildNewMap" class="mapsContents">
+            <h1>New Map Name:</h1>
+            <input id="newMapName" style="margin-top: 5%; font-size: 20px; width: 90%; padding: 2%">
+            <div class="wrapBtn">
+              <img class="imgBtnGreen" onclick="wizz(1)">
+              <p class="txtBtn">Start Wizard</p>
+            </div>
+          </div>
+          <!--Wizard 1 Exposure------------------------------------------ -->
+          <div id="wz1" class="mapsContents">
+            <div class="wizCon">
+              <table class="w1Layout">
+                <thead>
+                  <tr>
+                    <th><h2>Exposure Setup</h2></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Exposure Value:</td></tr>
+                  <tr>
+                    <td><table class="incre">
+                      <tbody>
+                      <tr><td><img class="negIncre" onclick="negIncre('expoVal',0.1)"/></td>
+                          <td><div class="increContainer">
+                            <input type="number" id="expoVal" value ="1" onblur="emitInt('expoVal')"/></td></div>
+                          <td><img class="posIncre" onclick="posIncre('expoVal',0.1)"/></td></tr>
+                      </tbody>
+                      </table></td></tr>
+                  </tr>
+                  <tr>
+                    <td>Radius:</td></tr>
+                  <tr>
+                    <td><table class="incre">
+                      <tbody>
+                      <tr><td><img class="negIncre" onclick="negIncre('radVal',1)"/></td>
+                          <td><div class="increContainer">
+                            <input type="number" id="radVal" value ="0.3" onblur="emitInt('radVal')"/></td></div>
+                          <td><img class="posIncre" onclick="posIncre('radVal',1)"/></td></tr>
+                      </tbody>
+                    </table></td></tr>
+                </tbody>
+                </tr>
+              </table>
+            </div>
+            <div class="wizNavContainer">
+              <table class="wizNav">
+                <tbody>
+                  <tr><td>Back</td><td>Quit</td><td>Next</td></tr>
+                  <tr>
+                    <td><img class="wizBack" onclick="wizz(0)"/></td>
+                    <td><img class="wizQuit" onclick="wizz(0)"></td>
+                    <td><img class="wizNext" onclick="wizz(2)"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Wizzard 2 Stars-------------------------------------- -->
+          <div id="wz2" class="mapsContents">
+            <div class="wizCon">
+              <table class="w2Layout">
+                <tbody>
+                  <tr><td><h2>Star Information</h2></td></tr>
+                  <tr><td><p class="lbl">Star height:</p></td></tr>
+                  <tr><td><td><img class="negIncre" onclick="negIncre('starHeightVal',1)"/></td>
+                    <td><div class="increContainer">
+                    <input type="number" id="starHeightVal" value ="0.3" onblur="emitInt('starHeightVal')"/></td></div>
+                  <td><img class="posIncre" onclick="posIncre('starHeightVal',1)"/></td></tr>
+                  <tr><td>
+                    <label class="container">Celing
+                      <input type="radio" checked="checked" name="starPosition" value="celing">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Floor
+                      <input type="radio" name="starPosition" value="floor">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="container">Other
+                      <input type="radio" name="starPosition" value="other">
+                      <span class="checkmark"></span>
+                    </label>
+                  </td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="wizNavContainer">
+              <table class="wizNav">
+                <tbody>
+                  <tr><td>Back</td><td>Quit</td><td>Next</td></tr>
+                  <tr>
+                    <td><img class="wizBack" onclick="wizz(1)"/></td>
+                    <td><img class="wizQuit" onclick="wizz(0)"></td>
+                    <td><img class="wizNext" onclick="wizz(3)"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Wizzard 3 Init -------------------------------------- -->
+          <!-- ** Init() function needs to be created -->
+          <div id="wz3" class="mapsContents">
+            <div class="wizCon">
+              <h2>Init Bruv</h2>
+              <div class="wrapBtn">
+                <img class="toggleBtn" onclick="initWiz()"/>
+                <p id=toggleBtnInit class="txtBtn">Start</p>
+              </div>
+              <div class="wizOutputText">
+                <p id="wizInitOutput"> Text Stuff </p>
+              </div>
+            </div>
+            <div class="wizNavContainer">
+              <table class="wizNav">
+                <tbody>
+                  <tr><td>Back</td><td>Quit</td><td>Next</td></tr>
+                  <tr>
+                    <td><img class="wizBack" onclick="wizz(2)"/></td>
+                    <td><img class="wizQuit" onclick="wizz(0)"></td>
+                    <td><img class="wizNext" onclick="wizz(4)"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Wizzard 4 mapping------------------------------------ -->
+          <!-- ** Write wizard 4  js to start mapping process -->
+          <!-- ** style for mapping table
+          table.wizMappingTbl {
+          width: 100%;
+            height: 100%;
+          }
+          table.wizMappingTbl td, table.wizMappingTbl th {
+          }
+          table.wizMappingTbl td:nth-child(even) {
+            background: #D0E4F5;
+          }
+          -->
+          <div id="wz4" class="mapsContents">
+            <div class="wizCon">
+              <h2>Mapping</h2>
+              <table class="wizMappingTbl">
+                <tbody>
+                  <tr>
+                    <td><h3>No. Points Detected: </h3></td><td><h4 id="wizNoPD">000</h4></td></tr>
+                  <tr>
+                    <td><h3>No. Points Added: </h3></td><td></td><h4 id="wizNoAdd">000</h4></tr>
+                  <tr>
+                    <td>Tracking Status: </td><td><h4 id="wizTracSta">000</h4></td></tr>
+                  <tr>
+                    <td>Frames: </td><td><h4 id="wizFrames">000</h4></td></tr>
+                  </tbody>
+                </tr>
+              </table>
+            </div>
+            <div class="wizNavContainer">
+              <table class="wizNav">
+                <tbody>
+                  <tr><td>Back</td><td>Quit</td><td>Next</td></tr>
+                  <tr>
+                    <td><img class="wizBack" onclick="wizz(3)"/></td>
+                    <td><img class="wizQuit" onclick="wizz(0)"></td>
+                    <td><img class="wizNext" onclick="wizz(5)"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Wizzard 5 ---------------------------------------------- -->
+          <!-- ** make class for wizIncerCon and wizDropCon so as to position them on the screen -->
+          <div id="wz5" class="mapsContents">
+            <div class="wizCon">
+              <h2>Map Scaling</h2>
+              <div class="wizDropCon">
+                <table class="wizDropTbl">
+                  <tbody>
+                    <tr>
+                      <td><img class="dropO" onclick="drop(0)"></td>
+                      <td><img class="dropX" onclick="drop(1)"></td>
+                      <td><img class="dropY" onclick="drop(2)"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="wizIncreCon">
+                <table class="">
+                  <tbody>
+                    <tr>
+                      <td>Origin to X distance (mm):</td></tr>
+                    <tr>
+                      <td><table class="incre">
+                        <tbody>
+                        <tr><td><img class="negIncre" onclick="negIncre('wizOtXVal',1)"/></td>
+                            <td><div class="increContainer">
+                              <input type="number" id="wizOtXVal" value ="0" onblur="emitInt('wizOtXVal')"/></td></div>
+                            <td><img class="posIncre" onclick="posIncre('wizOtXVal',1)"/></td></tr>
+                        </tbody>
+                        </table></td></tr>
+                    </tr>
+                    <tr>
+                      <td>Star tracker height(mm):</td></tr>
+                    <tr>
+                      <td><table class="incre">
+                        <tbody>
+                        <tr><td><img class="negIncre" onclick="negIncre('wizStHVal',1)"/></td>
+                            <td><div class="increContainer">
+                              <input type="number" id="wizStHVal" value ="0.3" onblur="emitInt('wizStHVal')"/></td></div>
+                            <td><img class="posIncre" onclick="posIncre('wizStHVal',1)"/></td></tr>
+                        </tbody>
+                      </table></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="wizNavContainer">
+              <table class="wizNav">
+                <tbody>
+                  <tr><td>Back</td><td>Quit</td><td>Next</td></tr>
+                  <tr>
+                    <td><img class="wizBack" onclick="wizz(4)"/></td>
+                    <td><img class="wizQuit" onclick="wizz(0)"></td>
+                    <td><img class="wizNext" onclick="wizz(6)"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+                  <div id = "wz5" class="mapsContents">
+                    <center><h1>Map Scaling</h1></center>
+                    <p> </p>
+                    <center><div class="btn-group" style="width:100%; height:10%; left:0.1%;">
+                      <button onclick="drop(1)" style="width:33.3%">Drop O</button>
+                      <button onclick="drop(2)" style="width:33.3%">Drop X</button>
+                      <button onclick="drop(3)" style="width:33.3%">Drop Y</button>
+                    </div></center>
+                    <p> </p>
+                    <p> </p>
+                    <label for="O_Xinput"> Origin to X distance(mm):</label>
+                    <center><button class ="increbutton" onclick = "OX(1)"> &#8672 </button>
+                      <input type = "number" id = "O_Xinput" value="0">
+                      <button class ="increbutton" onclick = "OX(2)">&#8674</button></center>
+                      <p> </p>
+                      <p> </p>
+                      <label for="O_Xinput"> Star-tracker height:(mm):</label>
+                      <center><button class ="increbutton" onclick = "STHeight(1)">&#8672</button>
+                        <input type = "number" id = "stHeight" value="0">
+                        <button class ="increbutton" onclick = "STHeight(2)">&#8674</button></center>
+                        <center><div class="btn-group" style="width:100%; bottom:0%; position:absolute; height:10%; left:0.1%;">
+                          <button onclick="wizzard(4)" style="width:33.3%">Back</button>
+                          <button onclick="wizzard(0)" style="width:33.3%">Quit</button>
+                          <button onclick="wizzard(6)" style="width:33.3%">Next</button>
+                        </div></center>
+                      </div>
+                      <!-- Wizzard End ------------------------------------------------  -->
+                      <!-- Map Load Tab ---------------------------------------------- -->
+                      <div id = "mapSelection" class="mapsContents">
+                        <p> </p>
+                        <p> </p>
+                        <center><select id="maplst" style="width 100%; min-width:100%; font-size: 30px; text-align: center;"class="">
+                          <option value="Test1">Test1</option>
+                          <option value="Test2">Test2</option>
+                          <option value="Test3">Test3</option>
+                          <option value="Test4">Test4</option>
+                        </select>
+                        <p> </p>
+                        <p> </p>
+                        <button onclick="" style="width:50%;">Load Selected Map</button></center>
+                      </div>
+                      <!-- Rereferencing Map Tab -->
+                      <div id="rereferencingMap" class="mapsContents">
+                        <p> </p>
+                        <p> </p>
+                        <p> </p>
+                        <center><div class="btn-group" style="width:100%; height:10%; left:0.1%;">
+                          <button onclick="drop(1)" style="width:33.3%">Drop O</button>
+                          <button onclick="drop(2)" style="width:33.3%">Drop X</button>
+                          <button onclick="drop(3)" style="width:33.3%">Drop Y</button>
+                        </div></center>
+                        <p> </p>
+                        <p> </p>
+                        <p> </p>
+                        <label for="O_Xinput"> Origin to X distance(mm):</label>
+                        <center><button class ="increbutton" onclick = "OX(1)">&#8672</button>
+                          <input type = "number" id = "O_Xinput" value="0">
+                          <button class ="increbutton" onclick = "OX(2)">&#8674</button></center>
+                          <p> </p>
+                          <p> </p>
+                          <p> </p>
+                          <p> </p>
+                          <label for="O_Xinput"> Star-tracker height:(mm):</label>
+                          <center><button class ="increbutton" onclick = "STHeight(1)">&#8672</button>
+                            <input type = "number" id = "stHeight" value="0">
+                            <button class ="increbutton" onclick = "STHeight(2)">&#8674</button></center>
+                          </div>
+                          <!-- Roll Back Current Map Tab -->
+                          <div id="rollback" class="mapsContents">
+                            <p>Rolllllllllllllllllllllllllllllllllll</p>
+                          </div>
+                          <!-- Add Stars to Map -->
+                          <div id="addStars" class="mapsContents">
+                            <center><button id="mappingToggle" class="mappingToggle" onclick="mappinTgl()">Mapping Off</button></center>
+                          </div>
+                          <!-- Tweaking of Map Values -->
+                          <div id="mapTweaking" class="mapsContents">
+                            <p>Map being tweaked</p>
+                          </div>
+
+                          <!-- Map Load Tab End ------------------------------------------- -->
+
+      </div>
+
+
+  </div>
+</body>
