@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW X6 -->
@@ -61,3 +62,68 @@ yUpa8pKYzKQmN8nJThYkIAA7"/>
   <path class="fil1 str0" d="M2 20l0 74c0,10 8,19 19,19l71 0c10,0 19,-9 19,-19l0 -74c0,-10 -9,-18 -19,-18l-71 0c-11,0 -19,8 -19,18z"/>
  </g>
 </svg>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="13.078mm" height="13.2334mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 113 114"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:gray;stroke-width:3.04157}
+    .fil1 {fill:none}
+    .fil0 {fill:black}
+   ]]>
+  </style>
+   <clipPath id="id0">
+    <path d="M2 20l0 74c0,10 8,19 19,19l71 0c10,0 19,-9 19,-19l0 -74c0,-10 -9,-18 -19,-18l-71 0c-11,0 -19,8 -19,18z"/>
+   </clipPath>
+    <clipPath id="id1">
+     <path d="M2 20l0 74c0,10 8,19 19,19l71 0c10,0 19,-9 19,-19l0 -74c0,-10 -9,-18 -19,-18l-71 0c-11,0 -19,8 -19,18z"/>
+    </clipPath>
+    <clipPath id="id2">
+     <path d="M2 20l0 74c0,10 8,19 19,19l71 0c10,0 19,-9 19,-19l0 -74c0,-10 -9,-18 -19,-18l-71 0c-11,0 -19,8 -19,18z"/>
+    </clipPath>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0" d="M2 20l0 74c0,10 8,19 19,19l71 0c10,0 19,-9 19,-19l0 -74c0,-10 -9,-18 -19,-18l-71 0c-11,0 -19,8 -19,18z"/>
+  <g style="clip-path:url(#id0)">
+   <g id="_1008829968">
+   </g>
+   <g style="clip-path:url(#id1)">
+    <image x="-15" y="-14" width="142" height="142" xlink:href="data:image/gif;base64,R0lGODlhTwBPANUAAP///2VlZWRkZGNjY2JiYmFhYWBgYF9fX15eXl1d
+XVxcXFtbW1paWllZWVhYWFdXV1ZWVlVVVVRUVFNTU1JSUlFRUVBQUE9PT05OTk1NTUxMTEtLS0pK
+SklJSUhISEdHR0ZGRkVFRUNDQ0JCQkFBQT8/Pz4+Pj09PTw8PDs7Ozo6Ojk5OTg4ODc3NzY2NjU1
+NTQ0NDMzMzIyMjExMTAwMC8vLy4uLi0tLSwsLCoqKikpKScnJwAAAAAAAAAAAAAAACwAAAAATwBP
+AAAI/gABCBxIsKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDihxJUQaMFy9ctFjJsqXL
+lzBbukAJQwaNkDZivGjBYoWKFClQCB1KtKjRo0KBqljBosWLGDZwcLwh48UKFCZKkBgxQoTXr2DD
+ih0LliuJEiZQrHgh40aOjDZmuFhhgoSIECE+6PXAt6/fv4AD89X7Aa8IEiZWuJhhQ8dFGzBanCAB
+wgOHDRoyYMBwobPnz6BDi+68OYOGDRw8gCBxogUMG28p3pjRIgWJEBw0XLBQgcKECRKCCx9OvLjx
+4L8pVLBwQQOHECRStJhxYwdFGi9SlADB4UIFCREg/jx44KB8g/Po06tfr768g/EQIkiocIEDiBIp
+XtCIHbHGCxW3aWABBA4soEACCByg4AEGNOjggxBGCOGCByCQgAILOACBBRpAp8ILNfD3kAwrnBBC
+BxZEsEACBxRAwAADCCBjADTWaOONON4oowAwElDAAQksEIEFHYRwwgptSfQCCiR4kIEEDSBgwIsx
+CpDjlVheKWOPBiDQgAQZeEACCvpJ1IIJInCAAQQMGFBAlVnGKWeNWxZgAAMQYMCBCCa0IENEMKxQ
+QggCPqDAizPOqWiWWxKgwAMchlDCCjDcAJFVlGlQgQMJwGjloqBqCWMCDlSgwWpr2QCRCymM8AEG
+/xREGWOotObIo5cUYPDBCCm4UMOqKYjw6gQMHJBorcgGIOMBDEygqwi9/vpQbSJ4cIEECxib7LbK
+HrCABBd4AG0LN02LQrXXLmAAt9wa8G24IqBALkQtnGsttuuym6y74Iorb7kO1Ysuvvru+66/85o7
+sLoFI8svvP/Sa2+6+TYc6sMIA9yQwPcybPHFB8ebcMATE/wxqBiLrDFDHFN8MsohR6xwxxW/LGfK
+MpO8cM02Z4nzyBuX7HHPcf688kItm0y0zzEDzbLQPC+No9ES7yw10/2qXDXNV2NJ9cwud53j1zpz
+LfbUTR+tUNJDn10j2UFb7baNcD8t99w01o001P54v5321mH3rffafPcdwOAJsR312YgjpLjhh/8N
+ttJ4N37Q44ZbbhDmgkteduCVex632Z1nnfPooM+teUFsa4u3AN6a7jTSwXbs+tywhyyd2gmxKiwG
+xBr76dnLNvtstMC6Cqusw4t9awO57or8Q5iCoCmnnhI/aqmnkpBqRIISaoGhiDZPdKOPRjopDGai
+qSabbsK5dJ135rlnn39GtGSTT0Y5pafma9iWBkCALn0pTGMqU0RIZCIUqYhFLgJgAJG1ox79KEhD
+KtKRkqQkAImPQAZCEIUkRMISNohCFsKQhiJFgg9JSyLY0Q53vAMe8ZDHPOzJoQ4b4B74yIc+9oPB
+j35EFBHa2AY3uuGNb4BznCY6ETkTUA5znAMd6VDnIpGZTGUuk5nNjOaLYPRMaU6TmtW05jUZkQtd
+7IIXwgjmjXDsC2EMgxjFMIYjVsGKVrhClj76MSxmQYta2BISnvgEKEhJpCKHohSmOIUkkIykJCdJ
+yUpa8pKYzKQmN8nJThYkIAA7"/>
+   </g>
+   <g style="clip-path:url(#id2)">
+   </g>
+  </g>
+  <path class="fil1 str0" d="M2 20l0 74c0,10 8,19 19,19l71 0c10,0 19,-9 19,-19l0 -74c0,-10 -9,-18 -19,-18l-71 0c-11,0 -19,8 -19,18z"/>
+ </g>
+</svg>
+>>>>>>> 3805f3eb0f9c16707c09252f0d487e5b6566665a

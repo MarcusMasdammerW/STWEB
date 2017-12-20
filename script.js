@@ -81,22 +81,16 @@ function wizz(pge){
     mapsTab('wz1');
     locking(true);
     statusBar.style.display = "none";
-    break;
-    case 2: //load wizzard 2 after checking exposure value
-    var expval=document.getElementById("expoVal").value;
-    var exprad=document.getElementById("radVal").value;
-    if (isNaN(expval)||isNaN(exprad))
-    {
-      alert("Must input numbers");
-    }else{
       mapsTab('wz2');
-    }
     break;
     case 3: //loads wizzard 3 after checking values
-    var stH=document.getElementById("starHeight").value;
+    var stH=document.getElementById("starHeightVal").value;
+    var
     if(isNaN(stH)){
       alert("Must input numbers");
     }else{
+      emitInt('starHeightVal');
+      emitStd('cameraDirection')
       mapsTab('wz3');
     }
     break;
@@ -180,9 +174,7 @@ function posIncre(source, factor){
 function emitInt(source){
   var valInt = document.getElementById(source).value;
   if(isNaN(valInt)){
-    alert(
-
-      "Must input Numbers Only!!!");
+    alert("Must input Numbers Only!!!");
   }else{
     socket.emit('change',{
       source: source,
@@ -203,4 +195,30 @@ function emitMapLoad(map){
   socket.emit('mapLoad',{
     toLoad: map
   })
+}
+// Misc.
+//- Incrementals that don't send
+//-- negative increment
+function stdNegIncre(source, factor){
+  var toChg = (document.getElementById(source).value)*1;
+  var chgBy = factor*1;
+
+  var newVal = ((toChg/chgBy)-(chgBy/chgBy))/chgBy;
+  document.getElementById(source).value = newVal;
+}
+//-- positive increment
+function stdPosIncre(source, factor){
+  var toChg = (document.getElementById(source).value)*1;
+  var chgBy = factor*1;
+
+  var newVal = ((toChg/chgBy)+(chgBy/chgBy))/chgBy;
+  document.getElementById(source).value = newVal;
+}
+//- Interger Checker
+function intChk(source){
+  var valInt = document.getElementById(source).value;
+  if(isNaN(valInt)){
+    alert("Must input Numbers Only!!!");
+    valInt.value = valInt.defaultValue;
+  }
 }
