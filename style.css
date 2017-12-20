@@ -320,6 +320,11 @@ table.w2Layout tr:nth-child(2) {
   max-height: none;
   min-height: none;
 }
+.wizOutputText p{
+  font-family: txtLight;
+  font-size: none;
+  color: white;
+}
 /* Wizard navigation bar */
 .wizNavContainer{
 width:100%;
