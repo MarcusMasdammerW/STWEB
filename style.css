@@ -323,11 +323,44 @@ table.w2Layout tr:nth-child(2) {
 .container input:checked ~ .checkmark {
     background-image:url("../StarTracker_GUI_Images/pbActive.svg");
 }
-/* Wizard 3 */
-.wizOutputText p{
-  font-family: txtLight;
-  font-size: none;
-  color: white;
+/* Wizard 4 */
+table.wizMappingTbl {
+width: 100%;
+  height: 100%;
+}
+table.wizMappingTbl td, table.wizMappingTbl th {
+}
+table.wizMappingTbl td:nth-child(even) {
+  background: #D0E4F5;
+}
+/* Wizard 5 */
+.wizDropCon{
+max-width: none;
+min-width: none;
+max-height: none;
+min-height: none;
+position: relative;
+top: none;
+left: none;
+}
+table.wizDropTbl{
+  max-width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+}
+table.wizDropTbl td{
+  max-width: 33.33%;
+  min-width: 33.33%;
+  max-height: 100%;
+  min-height: 100%;
+}
+.wizIncreCon{
+  max-width: 100%;
+  min-width: 100%;
+  max-height: none;
+  min-height: none;
+  align-items: center;
 }
 /* Wizard navigation bar */
 .wizNavContainer{
@@ -378,6 +411,12 @@ table.wizNav tr:nth-child(odd) {
   max-height: none;
   min-height: none;
   content:url("../StarTracker_GUI_Images/wizNext.svg") left top no-repeat;
+}
+/* Wizard Output text */
+.wizOutputText p{
+  font-family: txtLight;
+  font-size: none;
+  color: white;
 }
 
 /* Incremental Classes */

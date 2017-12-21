@@ -1,5 +1,9 @@
 var lock;
+
+// Wizard variables
 var oldMapName;
+var didInt;
+var didIntCnt
 
 //connect to server
 var socket = io.connect('http://localhost:3000');
@@ -85,21 +89,22 @@ function wizz(pge){
     break;
     case 3: //loads wizzard 3 after checking values
     var stH=document.getElementById("starHeightVal").value;
-    var
     if(isNaN(stH)){
       alert("Must input numbers");
     }else{
       emitInt('starHeightVal');
-      emitStd('cameraDirection')
+      emitStd('cameraDirection');
       mapsTab('wz3');
     }
     break;
     case 4://loads wizzard 4 after checking int is completed
-    //check int
-    mapsTab('wz4');
-    break;
-    case 5://Loads wizzard 5 after mapping
-    mapsTab('wz5');
+    //Has int been completed;
+    if(didInt==true){
+      socket.emit('mappingTgl');
+      mapsTab('wz4');
+    }else {
+      alert("Must complete initialisation");
+    }
     break;
     case 6://Completed Wizzard return to status screen after checking values
     var oX=document.getElementById("O_Xinput").value;
@@ -120,11 +125,13 @@ function wizz(pge){
 function wizzardres(){
   var name = document.getElementById("newMapName");
   name.value = null;
-  document.getElementById("exposureVal").value = "0.3";
-  document.getElementById("expoRad").value = "5";
-  document.getElementById("starHeight").value = "0";
-  document.getElementById("O_Xinput").value = "0";
-  document.getElementById("stHeight").value = "0";
+  document.getElementById("expoVal").value = document.getElementById("expoVal").defaultValue;
+  document.getElementById("radVal").value = document.getElementById("radVal").value.defaultValue;
+  document.getElementById("starHeightVal").value = document.getElementById("starHeightVal").defaultValue;
+  document.getElementById("O_Xinput").value = document.getElementById("O_Xinput").defaultValue;
+  document.getElementById("stHeight").value = document.getElementById("stHeight").defaultValue;
+  didInt = false;
+  didIntCnt = 0;
 }
 
 
@@ -220,5 +227,19 @@ function intChk(source){
   if(isNaN(valInt)){
     alert("Must input Numbers Only!!!");
     valInt.value = valInt.defaultValue;
+  }
+}
+//- initialisation
+function initWiz(valIn){
+  didInt = true;
+  socket.emit('initFam');
+  didIntCnt =+ 1;
+  switch (valIn) {
+    case 0:
+    didInt = false;
+    didIntCnt = 0;  
+      break;
+    default:
+
   }
 }

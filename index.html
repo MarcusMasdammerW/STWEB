@@ -105,7 +105,7 @@
                   <tr>
                     <td>Exposure Value:</td></tr>
                   <tr>
-                    <td><table class="incre">
+                    <td><table class="w1Layout">
                       <tbody>
                       <tr><td><img class="negIncre" onclick="negIncre('expoVal',0.1)"/></td>
                           <td><div class="increContainer">
@@ -187,7 +187,6 @@
           </div>
 
           <!-- Wizzard 3 Init -------------------------------------- -->
-          <!-- ** Init() function needs to be created -->
           <div id="wz3" class="mapsContents">
             <div class="wizCon">
               <h2>Init Bruv</h2>
@@ -196,7 +195,7 @@
                 <p id=toggleBtnInit class="txtBtn">Start</p>
               </div>
               <div class="wizOutputText">
-                <p id="wizInitOutput"> Text Stuff </p>
+                <p id="wizInitOutput"> Press start and move the star tracker 50cm, in a straight, smooth movement </p>
               </div>
             </div>
             <div class="wizNavContainer">
@@ -214,18 +213,6 @@
           </div>
 
           <!-- Wizzard 4 mapping------------------------------------ -->
-          <!-- ** Write wizard 4  js to start mapping process -->
-          <!-- ** style for mapping table
-          table.wizMappingTbl {
-          width: 100%;
-            height: 100%;
-          }
-          table.wizMappingTbl td, table.wizMappingTbl th {
-          }
-          table.wizMappingTbl td:nth-child(even) {
-            background: #D0E4F5;
-          }
-          -->
           <div id="wz4" class="mapsContents">
             <div class="wizCon">
               <h2>Mapping</h2>
@@ -257,9 +244,7 @@
             </div>
           </div>
 
-          <!-- Wizzard 5 ---------------------------------------------- -->
-          <!-- ** make class for wizIncerCon and wizDropCon so as to position them on the screen -->
-          <!-- ** make class for drop buttons -->
+          <!-- Wizard 5 ---------------------------------------------- -->
           <div id="wz5" class="mapsContents">
             <div class="wizCon">
               <h2>Map Scaling</h2>
@@ -275,17 +260,17 @@
                 </table>
               </div>
               <div class="wizIncreCon">
-                <table class="">
+                <table class="w2Layout">
                   <tbody>
                     <tr>
                       <td>Origin to X distance (mm):</td></tr>
                     <tr>
                       <td><table class="incre">
                         <tbody>
-                        <tr><td><img class="negIncre" onclick="negIncre('wizOtXVal',1)"/></td>
+                        <tr><td><img class="negIncre" onclick="stdNegIncre('wizOtXVal',1)"/></td>
                             <td><div class="increContainer">
-                              <input type="number" id="wizOtXVal" value ="0" onblur="emitInt('wizOtXVal')"/></td></div>
-                            <td><img class="posIncre" onclick="posIncre('wizOtXVal',1)"/></td></tr>
+                              <input type="number" id="wizOtXVal" value ="0" onblur="intChk('wizOtXVal')"/></td></div>
+                            <td><img class="posIncre" onclick="stdPosIncre('wizOtXVal',1)"/></td></tr>
                         </tbody>
                         </table></td></tr>
                     </tr>
@@ -294,10 +279,10 @@
                     <tr>
                       <td><table class="incre">
                         <tbody>
-                        <tr><td><img class="negIncre" onclick="negIncre('wizStHVal',1)"/></td>
+                        <tr><td><img class="negIncre" onclick="stdNegIncre('wizStHVal',1)"/></td>
                             <td><div class="increContainer">
-                              <input type="number" id="wizStHVal" value ="0.3" onblur="emitInt('wizStHVal')"/></td></div>
-                            <td><img class="posIncre" onclick="posIncre('wizStHVal',1)"/></td></tr>
+                              <input type="number" id="wizStHVal" value ="0.3" onblur="intChk('wizStHVal')"/></td></div>
+                            <td><img class="posIncre" onclick="stdPosIncre('wizStHVal',1)"/></td></tr>
                         </tbody>
                       </table></td></tr>
                   </tbody>
@@ -317,8 +302,8 @@
               </table>
             </div>
           </div>
-
           <!-- Wizzard End ------------------------------------------------  -->
+
           <!-- Map Load Tab ---------------------------------------------- -->
           <div class="mapsContents" id="mapSelection">
             <div class="mapLstCont">
