@@ -101,8 +101,9 @@ function wizz(pge){
     //Has int been completed;
     if(didInt==true){
       socket.emit('mappingTgl');
-      mapping
+      mappingTgl();
       mapsTab('wz4');
+      mappingTgl(2);
     }else {
       alert("Must complete initialisation");
     }
@@ -134,6 +135,7 @@ function wizzardres(){
   didInt = false;
   didIntCnt = 0;
 }
+
 
 
 //- Menu locking
@@ -232,20 +234,18 @@ function intChk(source){
 }
 //- initialisation
 function initWiz(valIn){
+  var btnText = getElementById('toggleBtnInit').innerHTML;
+  var btnLook = getElementById('initTgl').style.content;
   didInt = true;
   socket.emit('initFam');
   didIntCnt =+ 1;
-  switch (valIn) {
-    case 0:
+  if(valIn==0){
     didInt = false;
     didIntCnt = 0;
-      break;
-    case 1:
-    var btnText = getElementById('toggleBtnInit').innerHTML;
-
-      break;
-    default:
-
+  }else {
+    btnText = (btnText == "Stop") ? "Start":"Stop";
+    btnLook = (btnLook == url("../StarTracker_GUI_Images/button.svg") left top no-repeat) ? url("../StarTracker_GUI_Images/btnGreen.svg") left top no-repeat:url("../StarTracker_GUI_Images/button.svg")left top no-repeat;
+    btnAndStars();
   }
 }
 //- HUD Manager
@@ -255,5 +255,6 @@ function hideAll(){
 }
 //-- Minimize all but div Button
 function btnAndStars(){
-
+//to
 }
+//- mapping toggle

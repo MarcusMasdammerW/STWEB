@@ -480,6 +480,14 @@ table.incre td:nth-child(2) {
   max-height: inherit;
   min-height: inherit;
 }
+/* toggle button */
+.toggleBtn{
+  max-width: none;
+  min-width: none;
+  max-height: none;
+  min-height: none;
+  content:url("../StarTracker_GUI_Images/button.svg") left top no-repeat;
+}
 /*Text Stuff*/
 h1{
   font-family: txtRegular;
