@@ -101,6 +101,7 @@ function wizz(pge){
     //Has int been completed;
     if(didInt==true){
       socket.emit('mappingTgl');
+      mapping
       mapsTab('wz4');
     }else {
       alert("Must complete initialisation");
@@ -237,9 +238,22 @@ function initWiz(valIn){
   switch (valIn) {
     case 0:
     didInt = false;
-    didIntCnt = 0;  
+    didIntCnt = 0;
+      break;
+    case 1:
+    var btnText = getElementById('toggleBtnInit').innerHTML;
+
       break;
     default:
 
   }
+}
+//- HUD Manager
+//-- Minimize All
+function hideAll(){
+
+}
+//-- Minimize all but div Button
+function btnAndStars(){
+
 }
